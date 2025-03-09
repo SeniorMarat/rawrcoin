@@ -18,9 +18,10 @@ jobs:
             ${{ github.actor }} created commit:
             Commit message: ${{ github.event.commits[0].message }}
       - uses: actions/checkout@v3
+      - run: corepack enable
       - uses: actions/setup-node@v3
         with:
-          node-version: "20"
+          node-version: "22"
       # Pick your own package manager and build script
       - run: pnpm i
       - run: npx nuxt build --preset github_pages
