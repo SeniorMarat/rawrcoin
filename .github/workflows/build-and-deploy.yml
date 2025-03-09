@@ -18,6 +18,7 @@ jobs:
             ${{ github.actor }} created commit:
             Commit message: ${{ github.event.commits[0].message }}
       - uses: actions/checkout@v3
+      - run: npm install -g corepack@latest
       - run: corepack enable
       - uses: actions/setup-node@v3
         with:
